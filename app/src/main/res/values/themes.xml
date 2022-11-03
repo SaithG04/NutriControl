@@ -1,0 +1,25 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Theme.NutriControl" parent="Theme.MaterialComponents.NoActionBar">
+        <!-- Primary brand color. -->
+        <item name="colorPrimary">@color/black</item>
+        <item name="colorPrimaryDark">@color/black</item>
+        <item name="colorAccent">@color/red</item>
+        <item name="android:backgroundTint">@color/black</item>
+        <!-- Customize your theme here. -->
+    </style>
+    <style name="RadioButtonStyle" parent="Theme.AppCompat.Light">
+        <item name="colorAccent"> @color/black</item>
+    </style>
+    <style name="CalendarStyle" parent="Theme.AppCompat.Light.Dialog">
+        <!-- Primary brand color. -->
+        <item name="colorAccent">#E8FF00</item>
+        <item name="android:backgroundTint">#7E28F8</item>
+        <!-- Customize your theme here. -->
+    </style>
+    <style name="AlertDialogStyle" parent="Theme.AppCompat.Light.Dialog.Alert">
+        <item name="colorAccent">@color/black</item>
+        <item name="android:textColor">@color/black</item>
+        <item name="android:backgroundTint">#7E28F8</item>
+    </style>
+</resources>

@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">NutriControl</string>
+    <string name="principal_text">HOLA, BIENVENIDO(A)</string>
+    <string name="textUser">Ingrese usuario</string>
+    <string name="txtPass">Ingrese contraseña</string>
+    <string name="textBIS">INICIAR\nSESION</string>
+    <string name="bMasculino">Masculino</string>
+    <string name="bFemenino">Femenino</string>
+    <string name="bOtro">Otro</string>
+
+</resources>
