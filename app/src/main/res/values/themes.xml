@@ -13,7 +13,7 @@
     </style>
     <style name="CalendarStyle" parent="Theme.AppCompat.Light.Dialog">
         <!-- Primary brand color. -->
-        <item name="colorAccent">#E8FF00</item>
+        <item name="colorAccent">@color/black</item>
         <item name="android:backgroundTint">#7E28F8</item>
         <!-- Customize your theme here. -->
     </style>

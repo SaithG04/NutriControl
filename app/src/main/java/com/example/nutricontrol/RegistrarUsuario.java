@@ -10,6 +10,7 @@ import android.graphics.Color;
 import android.os.Bundle;
 import android.text.InputFilter;
 import android.text.InputType;
+import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -152,21 +153,27 @@ public class RegistrarUsuario extends AppCompatActivity {
 
     public void crearUser(View view){
         AlertDialog.Builder builder = new AlertDialog.Builder(RegistrarUsuario.this, R.style.AlertDialogStyle);
-        builder.setTitle("USUARIO");
-        final EditText userET = new EditText(RegistrarUsuario.this);
+        EditText userET = new EditText(RegistrarUsuario.this);
         userET.setInputType(InputType.TYPE_TEXT_VARIATION_PERSON_NAME);
-        userET.setHintTextColor(Color.GRAY);
-        userET.setHint("Ingrese usuario.");
+        userET.setHint("Escriba usuario");
+        userET.setGravity(Gravity.CENTER);
         builder.setView(userET);
-        builder.setPositiveButton("OK",new DialogInterface.OnClickListener() {
+        builder.setPositiveButton("Continuar",new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
-                String a = userET.getText().toString();
-                Toast.makeText(RegistrarUsuario.this, a, Toast.LENGTH_SHORT).show();
-                crearPassword(view);
+                String usuario = userET.getText().toString();
+                if(usuario.isEmpty())  {
+                    Toast.makeText(RegistrarUsuario.this, "Escriba el nombre de usuario", Toast.LENGTH_SHORT).show();
+                    crearUser(view);
+                }
+                else{
+                    Toast.makeText(RegistrarUsuario.this, usuario, Toast.LENGTH_SHORT).show();
+                    crearPassword(view);
+                }
+
             }
         });
-        builder.setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
+        builder.setNegativeButton("Cancelar", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
                 dialog.cancel();
@@ -176,20 +183,25 @@ public class RegistrarUsuario extends AppCompatActivity {
     }
     public void crearPassword(View view){
         AlertDialog.Builder builder = new AlertDialog.Builder(RegistrarUsuario.this, R.style.AlertDialogStyle);
-        builder.setTitle("CONTRASEÑA");
         EditText passET = new EditText(RegistrarUsuario.this);
-        passET.setInputType(InputType.TYPE_NUMBER_VARIATION_PASSWORD);
-        passET.setHintTextColor(Color.GRAY);
-        passET.setHint("Ingrese contraseña.");
+        passET.setInputType(InputType.TYPE_TEXT_VARIATION_PASSWORD);
+        passET.setHint("Escriba contraseña");
+        passET.setGravity(Gravity.CENTER);
         builder.setView(passET);
-        builder.setPositiveButton("OK",new DialogInterface.OnClickListener() {
+        builder.setPositiveButton("Registrar",new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
-                String a = passET.getText().toString();
-                Toast.makeText(RegistrarUsuario.this, a, Toast.LENGTH_SHORT).show();
+                String contraseña = passET.getText().toString();
+                if(contraseña.isEmpty())  {
+                    Toast.makeText(RegistrarUsuario.this, "Escriba la contraseña", Toast.LENGTH_SHORT).show();
+                    crearPassword(view);
+                }
+                else{
+                    Toast.makeText(RegistrarUsuario.this, contraseña, Toast.LENGTH_SHORT).show();
+                }
             }
         });
-        builder.setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
+        builder.setNegativeButton("Cancelar", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
                 dialog.cancel();
